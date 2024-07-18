@@ -40,7 +40,20 @@
 <a href="#home">About Me</a>
 </li>
 </ul>
-<a href="#" class="btn" id="subscribe-button">Subscribe</a>
+<a href="subscribe.html" class="btn" id="subscribe-button">Subscribe</a>
+    <script>
+  document.getElementById('subscribe-button').addEventListener('click', function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'subscribe.html', true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            document.getElementById('container').innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
+});
+  console.log("Je suis dans subscribe.html!");
+</script>
 <button id="menu">Menu</button>
 <span></span>
 <span></span>
